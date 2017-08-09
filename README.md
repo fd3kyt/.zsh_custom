@@ -1,5 +1,6 @@
 # Prerequisite
 * [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+  * install: `sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"`
 
 # Usage
 1. Clone this repository: `cd ~ && git clone https://github.com/fd3kyt/.zsh_custom.git`
