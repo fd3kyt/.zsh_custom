@@ -3,9 +3,10 @@
   * install: `sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"`
 
 # Usage
-1. Clone this repository: `cd ~ && git clone https://github.com/fd3kyt/.zsh_custom.git`
-2. Backup your old .zshrc: `mv ~/.zshrc ~/.zshrc.backup`
-3. Use the new .zshrc: `cp ~/.zsh_custom/.zshrc.template ~/.zshrc`
+Run this:
+``` shell
+bash -c "$(wget https://raw.githubusercontent.com/fd3kyt/.zsh_custom/master/setup.sh -O -)"
+```
 
 # Local customization
 All files match `*.local.*` and `*.local` are ignored by git.
