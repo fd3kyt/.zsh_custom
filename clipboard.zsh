@@ -1,5 +1,7 @@
 # https://coderwall.com/p/a035gq/zsh-copy-paste-system-wide-for-os-x-like-in-emacs
 
+# xclip may need X11 forwarding (option -X) if in ssh
+
 pb-kill-line () {
   zle kill-line
   echo -n $CUTBUFFER | xclip -i -selection c

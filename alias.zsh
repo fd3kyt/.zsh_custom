@@ -36,7 +36,7 @@ alias ftw-off="unset http_proxy https_proxy"
 
 # anaconda python
 alias pyana="export PATH=/home/fd3kyt/anaconda3/bin:$PATH"
-alias pip="ftw pip"
+alias pip="echo using ftw;ftw pip"
 alias conda="ftw conda"
 
 # trash
@@ -45,6 +45,8 @@ alias rmt='trash'
 
 # ssh
 alias sshalive="ssh -o ServerAliveInterval=60"
+# daily interactive ssh usage
+alias sshk="ssh -o ServerAliveInterval=60 -t -X"
 
 # old pytest is not working
 alias pytest="echo 'use py.test instead.'"
