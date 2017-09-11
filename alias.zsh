@@ -46,7 +46,13 @@ alias rmt='trash'
 # ssh
 alias sshalive="ssh -o ServerAliveInterval=60"
 # daily interactive ssh usage
-alias sshk="ssh -o ServerAliveInterval=60 -t -X"
+alias sshk="ssh -tt -o ServerAliveInterval=60 -t -X"
+
+function sshfsk(){
+    remote=$1
+    mount_point=$2
+    sudo sshfs "$remote" "$mount_point" -o reconnect,allow_other
+}
 
 # old pytest is not working
 alias pytest="echo 'use py.test instead.'"
