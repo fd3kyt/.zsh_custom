@@ -16,7 +16,7 @@ alias mhlew="grep -E --color 'error:|warning:|^'"
 alias lsl="ls -lia"
 
 # emacs
-alias emacs="env LANG="zh_CN.UTF-8" emacs"
+alias emacs="env LANG=\"zh_CN.UTF-8\" emacs"
 alias emacsclient="TERM=xterm-256color emacsclient"
 alias ems="~/.emacs.d/personal/startemacs.sh"
 
@@ -28,14 +28,27 @@ alias gfr="git flow release"
 # tmux 256 colors
 alias tmux="tmux -2"
 
-# polipo
-proxy_ip="localhost"
-alias ftw="http_proxy=http://$proxy_ip:8123 https_proxy=http://$proxy_ip:8123"
-alias ftw-on="export http_proxy=http://$proxy_ip:8123 https_proxy=http://$proxy_ip:8123"
-alias ftw-off="unset http_proxy https_proxy"
+# proxy
+proxy_ip="192.168.1.177"
+proxy_port="3128"
+
+proxy_address="http://$proxy_ip:$proxy_port"
+function ftw(){
+    http_proxy=$proxy_address https_proxy=$proxy_address "$@"
+}
+function ftw-on(){
+    export http_proxy=$proxy_address
+    export https_proxy=$proxy_address
+}
+function ftw-off(){
+    unset http_proxy https_proxy
+}
 
 # anaconda python
-alias pyana="export PATH=/home/fd3kyt/anaconda3/bin:$PATH"
+function use-anaconda-python(){
+    export PATH=/home/fd3kyt/anaconda3/bin:$PATH
+}
+
 alias pip="echo using ftw;ftw pip"
 alias conda="ftw conda"
 
@@ -51,7 +64,10 @@ alias sshk="ssh -tt -o ServerAliveInterval=60 -t -X"
 function sshfsk(){
     remote=$1
     mount_point=$2
-    sudo sshfs "$remote" "$mount_point" -o reconnect,allow_other
+
+    if ! sshfs "$remote" "$mount_point" -o reconnect;then
+        echo "Failed. Need to be root or in the group 'fuse'."
+    fi
 }
 
 # old pytest is not working
@@ -76,3 +92,6 @@ alias sfdp="/usr/bin/sfdp"
 alias patchwork="/usr/bin/patchwork"
 
 alias xarsg="xargs -I {}"
+
+# my big Dell
+alias big-dell="rdesktop-vrdp -g 95% -u Dell -p 123456 192.168.1.177 -r disk:Storage=/home/Storage"
