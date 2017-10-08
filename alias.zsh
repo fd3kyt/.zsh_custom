@@ -28,29 +28,10 @@ alias gfr="git flow release"
 # tmux 256 colors
 alias tmux="tmux -2"
 
-# proxy
-proxy_ip="192.168.1.177"
-proxy_port="3128"
-
-proxy_address="http://$proxy_ip:$proxy_port"
-function ftw(){
-    http_proxy=$proxy_address https_proxy=$proxy_address "$@"
-}
-function ftw-on(){
-    export http_proxy=$proxy_address
-    export https_proxy=$proxy_address
-}
-function ftw-off(){
-    unset http_proxy https_proxy
-}
-
 # anaconda python
 function use-anaconda-python(){
     export PATH=/home/fd3kyt/anaconda3/bin:$PATH
 }
-
-alias pip="echo using ftw;ftw pip"
-alias conda="ftw conda"
 
 # trash
 alias rm='echo "Please use trash instead of rm, or type \\\rm."; false'
