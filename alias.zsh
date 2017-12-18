@@ -76,3 +76,5 @@ alias xarsg="xargs -I {}"
 
 # my big Dell
 alias big-dell="rdesktop-vrdp -g 95% -u Dell -p 123456 192.168.1.177 -r disk:Storage=/home/Storage"
+
+alias anki="anki -b /home/XXD/anki/"
