@@ -1,6 +1,6 @@
 # proxy
-proxy_ip="192.168.1.177"
-proxy_port="3128"
+proxy_ip="127.0.0.1"
+proxy_port="8123"
 
 proxy_address="http://$proxy_ip:$proxy_port"
 function ftw(){
