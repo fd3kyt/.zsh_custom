@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-function split(){
-    true
-}
-
 function split()
 {
     string=$1
