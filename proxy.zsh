@@ -16,4 +16,3 @@ function ftw-off(){
 
 
 alias pip="echo using ftw;ftw pip"
-alias conda="ftw conda"

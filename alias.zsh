@@ -28,11 +28,6 @@ alias gfr="git flow release"
 # tmux 256 colors
 alias tmux="tmux -2"
 
-# anaconda python
-function use-anaconda-python(){
-    export PATH=/home/fd3kyt/anaconda3/bin:$PATH
-}
-
 # trash
 alias rm='echo "Please use trash instead of rm, or type \\\rm."; false'
 alias rmt='trash'
@@ -54,23 +49,12 @@ function sshfsk(){
 # old pytest is not working
 alias pytest="echo 'use py.test instead.'"
 
-
-
 # utilities
 # date for filename
 alias datef="date +%Y-%m-%d_%H.%M.%S"
 
 # ls always with -a
 alias ls="ls -a"
-
-# overwrite anaconda graphviz
-alias dot="/usr/bin/dot"
-alias neato="/usr/bin/neato"
-alias twopi="/usr/bin/twopi"
-alias circo="/usr/bin/circo"
-alias fdp="/usr/bin/fdp"
-alias sfdp="/usr/bin/sfdp"
-alias patchwork="/usr/bin/patchwork"
 
 alias xarsg="xargs -I {}"
 
