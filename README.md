@@ -7,6 +7,8 @@ Run this:
 bash -c "$(wget https://raw.githubusercontent.com/fd3kyt/.zsh_custom/master/setup.sh -O -)"
 ```
 
+Then, modify .zshrc. See `.zshrc.template`.
+
 # Local customization
 All files match `*.local.*` and `*.local` are ignored by git.
 
